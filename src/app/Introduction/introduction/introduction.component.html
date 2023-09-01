@@ -1,4 +1,269 @@
-<div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p> 
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top custom-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">Portfolio</a>
+    </div>
+    <ul class="nav navbar-nav" style="float: right;">
+      <li class="nav-item"><a class="nav-link" href="#section1" routerLinkActive="active">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section2" routerLinkActive="active">About Me</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section3" routerLinkActive="active">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section4" routerLinkActive="active">Experience</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section5" routerLinkActive="active">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section6" routerLinkActive="active">Contact</a></li>
+    </ul>
   </div>
+</nav>
+
+<div style="background-color: white;padding: 30px;" id="section1">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-6 col-lg-8">
+        <div class="text-container">
+          <h1 class="heading-text">Hello, and welcome to my portfolio!</h1>
+          <h1 class="subheading_text">I'm Chavva Manasa</h1>
+          <span class="description"><span>Forntend/UI developer </span>with a passion for creating beautiful
+            websites.</span>
+          <div class="typing-container">
+            <h1 class="typing-text">{{typingText}}</h1>
+          </div>
+          <h5>
+            Throughout this portfolio, you will find a collection of my work that
+            showcases both my technical expertise and creative flair.
+          </h5>
+          <h5>Feel free to explore my projects and learn more about me.</h5>
+          <h5> Thank you for visiting, and I look forward to the opportunity to connect
+            and collaborate.</h5>
+          <div class="btn_padding btn_styles_ab">
+            <div class="img_content">
+            <img class="img-fluid img_home" src="assets/linkedin.png" alt="Image" >
+            <img class="img-fluid img_home" src="assets/github.png" alt="Image" >
+            <button class="btn btn-primary btn_resume ">Resume</button>
+            </div>
+            <button class="btn btn-primary btn_contact ">Contact Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="image-container">
+          <img class="img-fluid" src="assets/aboutme" alt="Image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color: #1b0354;padding: 30px;height: fit-content;" id="section2">
+  <div class="container text-center">
+    <div class="row container_main">
+      <h1 class="aboutme">Welcome I'm Manasa Chavva</h1>
+      <div class="text-center  aboutme ">
+        <p class="content">
+          A passionate front-end developer with focus on crafting the visual and
+          interactive elements of websites that captivate and engage users.
+          Translating design concepts into HTML, CSS, and JavaScript code to
+          create responsive and visually appealing web pages. Collaborating
+          closely with UI/UX designers to ensure seamless integration of design
+          elements into the front-end.
+        </p>
+      </div>
+      <img src="assets/work" class="img-fluid  img-thumbnail" style="max-width: 200px;" />
+    </div>
+    <div class="row" style="background-color: white;
+   color: black;
+   z-index: 999;
+   border: 1px solid;
+   margin-top: 20px;">
+      <div class="container2 detail_container">
+        <div class="card-container ">
+          <div class="card2" *ngFor="let skills of skillContent">
+            <div class="skill_name">{{skills.skill}}</div>
+            <div class="hori_line"></div>
+            <p class="skill_content">{{skills.content}}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color:white;" id="section3">
+  <div class="container mt-5">
+    <div class="row ">
+      <div class="recent_card">
+        <p class="main_title_card">Explore My Personal Projects</p>
+        <p class="sub_title_card">Welcome to my portfolio of personal projects!</p>
+        <p class="about_card">These projects are presented as interactive flip cards. On the front side, you'll find
+          a
+          quick overview of each project, while on back side where you can find the GitHub link and Netlify demo.
+        </p>
+        <p class="about_card">Feel free to flip through and explore the diverse range of projects that showcase my
+          skills and creativity. If you're interested in diving deeper, you'll find the GitHub link for the source
+          code and the Netlify demo link for a live experience on the back side of each card.</p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="card-container ">
+        <div class="card" *ngFor="let item of projects">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="content_flex">
+                <p class="title_card">{{item.name}}</p>
+                <p class="sub_title">{{item.description}}</p>
+                <img src="assets/todo.png" class="img-fluid img_card">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="content_flex">
+                <p class="title_card">{{item.pathname}}</p>
+                <span class="sub_title">I've deployed the to-do app on Netlify. Explore the live demo on Netlify: <a
+                    href="{{item.netlifylink}}" class="link_card" target="_blank">Netlify
+                    Live</a></span>
+                <span style="margin-top: 10px;" class="sub_title">You can access the code for this project on my
+                  GitHub repository: <a href="{{item.githublink}}" class="link_card" target="_blank">GitHub
+                    Repository</a></span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color: aliceblue; margin-top: 50px;" id="section4">
+  <div class="recent_card">
+    <p class="main_title_card">My Experience</p>
+    <p class="sub_title_card">Welcome to my journey as a Front-End Developer</p>
+    <p class="about_card">In my role as a Front-End Developer , I have been entrusted with translating design
+      concepts
+      into interactive and visually captivating digital interfaces. </p>
+    <p class="about_card">Writing clean, efficient, and maintainable code using modern front-end technologies such
+      as
+      HTML5, CSS3, and JavaScript.
+      Collaborating closely with design and back-end teams to create seamless, responsive, and aesthetically
+      pleasing
+      user interfaces.
+    </p>
+  </div>
+  <div class="container">
+
+    <div class="row">
+      <div class="outer-container" *ngFor="let k of Experience">
+        <div class="left-side">
+          <div class="year inncont_card">
+            <div>{{k.year}}</div>
+            <div>{{k.companyname}}</div>
+          </div>
+
+        </div>
+        <div class="right-side">
+          <div class="line-container">
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+          <div class="right_card gradient-card">
+            <h2 class="cont_card">{{k.rolename}}</h2>
+            <h3 class="date_card">{{k.timeline}}</h3>
+            <h3 class="subcont_card">{{k.subrolename}}</h3>
+            <p class="inncont_card">{{k.roledesc}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div style="background-color: rgb(217, 197, 235);" id="section5">
+  <div class="container-fluid">
+    <div class="recent_card">
+      <p class="main_title_card">My Skills</p>
+      <p class="sub_title_card">Dive into my front-end skillset</p>
+      <p class="about_card">In my front-end journey, I wield HTML, CSS, and JavaScript to sculpt captivating digital
+        landscapes. </p>
+      <p class="about_card">With a knack for turning code into visually appealing interfaces, I also excel in
+        responsive
+        design, front-end frameworks, and optimizing performance. Let's collaborate to bring innovative ideas to life.
+      </p>
+    </div>
+    <div class="card-container ">
+      <div class="card1" style="margin-top: 20px;" *ngFor="let img of images">
+        <img src={{img}} class="img_skill">
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background-color: rgb(24 22 52);" id="section6">
+  <div class="container1">
+    <div class="row col-md-12">
+      <div class="col-md-6">
+        <div class="content-container">
+          <div class="title">Contact Me</div>
+          <p>Please feel free to reach out to me for any inquiries or to get in touch. You can contact me through the
+            information provided in my portfolio.</p>
+          <div class="contact_div">
+            <div *ngFor="let img of contactImages;let i=index">
+              <img src="{{img.image}}" class="contact_images img-fluid" [ngClass]="{'firstImage':i ===0 }">
+              <span class="contact_text">{{img.content}}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="title">Drop A Line</div>
+        <div class="form-container">
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div style="display: flex;flex-direction: row;gap: 10px;">
+              <div class="form-group" style="flex:1">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" formControlName="name" placeholder="Name">
+                <div *ngIf="f.name.errors && (f.name.dirty || f.name.touched)">
+                  <div *ngIf="f.name.touched" class="invalid_msg">
+                    Please provide Name to proceed further.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" style="flex:1">
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" id="phone" name="phonenumber" formControlName="phonenumber"
+                  placeholder="Phone Number">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" formControlName="email" placeholder="Email">
+              <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+                <div *ngIf="f.email.touched && !f.email.errors.email" class="invalid_msg">
+                  Please provide Email to proceed further.
+                </div>
+                <div *ngIf="f.email.errors.email" class="invalid_msg">
+                  Please provide correct Email Format.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" formControlName="message" placeholder="Message"></textarea>
+            </div>
+            <button *ngIf="profileForm.valid" [disabled]="profileForm.valid" type="submit">Submit</button>
+            <button *ngIf="!profileForm.valid" class="button_disable" [disabled]="!profileForm.valid"
+              type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div>2023 Portfolio Resume</div>
+    <div class="contact_div" style="flex-direction: row;">
+      <div *ngFor="let img of contactImages;" style="margin-top: 20px;">
+        <img src="{{img.image}}" class="contact_images img-fluid img-rounded">
+      </div>
+    </div>
+  </div>
+</footer>
