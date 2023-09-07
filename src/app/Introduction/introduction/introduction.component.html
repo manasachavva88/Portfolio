@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="">Portfolio</a>
     </div>
     <ul class="nav navbar-nav" style="float: right;">
-      <li class="nav-item"><a class="nav-link" href="#section1" routerLinkActive="active">Home</a></li>
+      <li class="nav-item"><a class="nav-link " href="#section1" routerLinkActive="active">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="#section2" routerLinkActive="active">About Me</a></li>
       <li class="nav-item"><a class="nav-link" href="#section3" routerLinkActive="active">Projects</a></li>
       <li class="nav-item"><a class="nav-link" href="#section4" routerLinkActive="active">Experience</a></li>
@@ -14,13 +14,16 @@
   </div>
 </nav>
 
-<div style="background-color: white;padding: 30px;" id="section1">
+<div style="    background-color: #45B8AC;padding: 40px;" id="section1">
   <div class="container text-center">
     <div class="row">
       <div class="col-md-6 col-lg-8">
         <div class="text-container">
           <h1 class="heading-text">Hello, and welcome to my portfolio!</h1>
           <h1 class="subheading_text">I'm Chavva Manasa</h1>
+          <div class="image-container_small">
+            <img class="img-fluid rounded-circle img_about" src="assets/port-6" alt="Image">
+          </div>
           <span class="description"><span>Forntend/UI developer </span>with a passion for creating beautiful
             websites.</span>
           <div class="typing-container">
@@ -35,23 +38,23 @@
             and collaborate.</h5>
           <div class="btn_padding btn_styles_ab">
             <div class="img_content">
-            <img class="img-fluid img_home" src="assets/linkedin.png" alt="Image" >
-            <img class="img-fluid img_home" src="assets/github.png" alt="Image" >
-            <button class="btn btn-primary btn_resume ">Resume</button>
+              <img class="img-fluid img_home" src="assets/linkedin.png" alt="Image">
+              <img class="img-fluid img_home" src="assets/github.png" alt="Image">
+              <button class="btn btn-primary btn_resume ">Resume</button>
             </div>
-            <button class="btn btn-primary btn_contact ">Contact Me</button>
+            <a class="btn btn-primary btn_contact " href="#section6">Contact Me</a>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="image-container">
-          <img class="img-fluid" src="assets/aboutme" alt="Image">
+          <img class="img-fluid rounded-circle" src="assets/port-6" alt="Image">
         </div>
       </div>
     </div>
   </div>
 </div>
-<div style="background-color: #1b0354;padding: 30px;height: fit-content;" id="section2">
+<div style="background-color: #d64161;padding: 30px;height: fit-content;" id="section2">
   <div class="container text-center">
     <div class="row container_main">
       <h1 class="aboutme">Welcome I'm Manasa Chavva</h1>
@@ -71,7 +74,8 @@
    color: black;
    z-index: 999;
    border: 1px solid;
-   margin-top: 20px;">
+   margin-top: 20px;
+   border-radius: 20px;">
       <div class="container2 detail_container">
         <div class="card-container ">
           <div class="card2" *ngFor="let skills of skillContent">
@@ -85,8 +89,8 @@
     </div>
   </div>
 </div>
-<div style="background-color:white;" id="section3">
-  <div class="container mt-5">
+<div style="background-color: #45B8AC;padding: 30px;" id="section3">
+  <div>
     <div class="row ">
       <div class="recent_card">
         <p class="main_title_card">Explore My Personal Projects</p>
@@ -131,7 +135,7 @@
     </div>
   </div>
 </div>
-<div style="background-color: aliceblue; margin-top: 50px;" id="section4">
+<div style="background-color:  #d64161; padding: 30px;" id="section4">
   <div class="recent_card">
     <p class="main_title_card">My Experience</p>
     <p class="sub_title_card">Welcome to my journey as a Front-End Developer</p>
@@ -146,7 +150,7 @@
       user interfaces.
     </p>
   </div>
-  <div class="container">
+  <div>
 
     <div class="row">
       <div class="outer-container" *ngFor="let k of Experience">
@@ -176,7 +180,7 @@
 </div>
 
 
-<div style="background-color: rgb(217, 197, 235);" id="section5">
+<div style="    background-color: #45B8AC;padding: 30px 10px 50px 10px;" id="section5">
   <div class="container-fluid">
     <div class="recent_card">
       <p class="main_title_card">My Skills</p>
@@ -259,11 +263,15 @@
 </div>
 <footer class="footer">
   <div class="footer-content">
-    <div>2023 Portfolio Resume</div>
+   
     <div class="contact_div" style="flex-direction: row;">
-      <div *ngFor="let img of contactImages;" style="margin-top: 20px;">
-        <img src="{{img.image}}" class="contact_images img-fluid img-rounded">
-      </div>
+      <img class="img-fluid img_home  rounded-circle" src="assets/linkedin.png" alt="Image">
+      <img class="img-fluid img_home  rounded-circle" src="assets/github.png" alt="Image" style="background-color: white;">
     </div>
+    <div>
+      <span>Resume</span>
+      <span style="margin-left: 10px;">Portfolio</span>
+    </div>
+    <div>&copy;2023 Manasa Chavva</div>
   </div>
 </footer>

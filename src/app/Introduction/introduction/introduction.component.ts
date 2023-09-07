@@ -121,6 +121,22 @@ export class IntroductionComponent implements OnInit {
         netlifylink: '',
         githublink: '',
       },
+      {
+        name: 'TODO APP',
+        description:
+          'A user-friendly web application that allows users to manage their tasks efficiently.',
+        pathname: 'Todo Code Path',
+        netlifylink: '',
+        githublink: '',
+      },
+      {
+        name: 'TODO APP',
+        description:
+          'A user-friendly web application that allows users to manage their tasks efficiently.',
+        pathname: 'Todo Code Path',
+        netlifylink: '',
+        githublink: '',
+      },
     ];
     this.Experience = [
       {
