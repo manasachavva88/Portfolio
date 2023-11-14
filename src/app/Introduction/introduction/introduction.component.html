@@ -1,23 +1,7 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top custom-navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="">Portfolio</a>
-    </div>
-    <ul class="nav navbar-nav" style="float: right;">
-      <li class="nav-item"><a class="nav-link " href="#section1" routerLinkActive="active">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#section2" routerLinkActive="active">About Me</a></li>
-      <li class="nav-item"><a class="nav-link" href="#section3" routerLinkActive="active">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" href="#section4" routerLinkActive="active">Experience</a></li>
-      <li class="nav-item"><a class="nav-link" href="#section5" routerLinkActive="active">Skills</a></li>
-      <li class="nav-item"><a class="nav-link" href="#section6" routerLinkActive="active">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div style="    background-color: #45B8AC;padding: 40px;" id="section1">
+<div class="section1_bg" id="section1">
   <div class="container text-center">
     <div class="row">
-      <div class="col-md-6 col-lg-8">
+      <div class="col-md-6 col-lg-8 padding_forimg">
         <div class="text-container">
           <h1 class="heading-text">Hello, and welcome to my portfolio!</h1>
           <h1 class="subheading_text">I'm Chavva Manasa</h1>
@@ -29,24 +13,24 @@
           <div class="typing-container">
             <h1 class="typing-text">{{typingText}}</h1>
           </div>
-          <h5>
+          <h5 class="font_header">
             Throughout this portfolio, you will find a collection of my work that
             showcases both my technical expertise and creative flair.
           </h5>
-          <h5>Feel free to explore my projects and learn more about me.</h5>
-          <h5> Thank you for visiting, and I look forward to the opportunity to connect
+          <h5 class="font_header">Feel free to explore my projects and learn more about me.</h5>
+          <h5 class="font_header"> Thank you for visiting, and I look forward to the opportunity to connect
             and collaborate.</h5>
           <div class="btn_padding btn_styles_ab">
             <div class="img_content">
-              <img class="img-fluid img_home" src="assets/linkedin.png" alt="Image">
-              <img class="img-fluid img_home" src="assets/github.png" alt="Image">
-              <button class="btn btn-primary btn_resume ">Resume</button>
+              <img class="img-fluid img_home" (click)="linkedinClick()" src="assets/linkedin.png" alt="Image">
+              <img class="img-fluid img_home" (click)="githubClick()" src="assets/github.png" alt="Image">
+              <button class="btn btn-primary btn_resume " (click)="openResume()">Resume</button>
             </div>
             <a class="btn btn-primary btn_contact " href="#section6">Contact Me</a>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 padding_forimg">
         <div class="image-container">
           <img class="img-fluid rounded-circle" src="assets/port-6" alt="Image">
         </div>
@@ -54,7 +38,7 @@
     </div>
   </div>
 </div>
-<div style="background-color: #d64161;padding: 30px;height: fit-content;" id="section2">
+<div class="section2_bg" id="section2">
   <div class="container text-center">
     <div class="row container_main">
       <h1 class="aboutme">Welcome I'm Manasa Chavva</h1>
@@ -68,14 +52,9 @@
           elements into the front-end.
         </p>
       </div>
-      <img src="assets/work" class="img-fluid  img-thumbnail" style="max-width: 200px;" />
+      <img src="assets/work" class="img-fluid  img-thumbnail work_css" />
     </div>
-    <div class="row" style="background-color: white;
-   color: black;
-   z-index: 999;
-   border: 1px solid;
-   margin-top: 20px;
-   border-radius: 20px;">
+    <div class="row c_details">
       <div class="container2 detail_container">
         <div class="card-container ">
           <div class="card2" *ngFor="let skills of skillContent">
@@ -89,7 +68,9 @@
     </div>
   </div>
 </div>
-<div style="background-color: #45B8AC;padding: 30px;" id="section3">
+<div
+  class="section3_bg"
+  id="section3">
   <div>
     <div class="row ">
       <div class="recent_card">
@@ -113,7 +94,7 @@
               <div class="content_flex">
                 <p class="title_card">{{item.name}}</p>
                 <p class="sub_title">{{item.description}}</p>
-                <img src="assets/todo.png" class="img-fluid img_card">
+                <img src="{{item.image}}" class="img-fluid img_card">
               </div>
             </div>
             <div class="flip-card-back">
@@ -135,7 +116,7 @@
     </div>
   </div>
 </div>
-<div style="background-color:  #d64161; padding: 30px;" id="section4">
+<div class="section4_bg" id="section4">
   <div class="recent_card">
     <p class="main_title_card">My Experience</p>
     <p class="sub_title_card">Welcome to my journey as a Front-End Developer</p>
@@ -180,47 +161,49 @@
 </div>
 
 
-<div style="    background-color: #45B8AC;padding: 30px 10px 50px 10px;" id="section5">
-  <div class="container-fluid">
+<div class="section5_bg" id="section5">
+  <div class="container-fluid ">
     <div class="recent_card">
-      <p class="main_title_card">My Skills</p>
-      <p class="sub_title_card">Dive into my front-end skillset</p>
-      <p class="about_card">In my front-end journey, I wield HTML, CSS, and JavaScript to sculpt captivating digital
+      <p class="main_title_card skill_card_color">My Skills</p>
+      <p class="sub_title_card skill_card_color">Dive into my front-end skillset</p>
+      <p class="about_card skill_card_color">In my front-end journey, I wield HTML, CSS, and JavaScript to sculpt
+        captivating digital
         landscapes. </p>
-      <p class="about_card">With a knack for turning code into visually appealing interfaces, I also excel in
+      <p class="about_card skill_card_color">With a knack for turning code into visually appealing interfaces, I also
+        excel in
         responsive
         design, front-end frameworks, and optimizing performance. Let's collaborate to bring innovative ideas to life.
       </p>
     </div>
-    <div class="card-container ">
+    <div class="card-container skillcard">
       <div class="card1" style="margin-top: 20px;" *ngFor="let img of images">
         <img src={{img}} class="img_skill">
       </div>
     </div>
   </div>
 </div>
-<div style="background-color: rgb(24 22 52);" id="section6">
-  <div class="container1">
-    <div class="row col-md-12">
-      <div class="col-md-6">
-        <div class="content-container">
-          <div class="title">Contact Me</div>
-          <p>Please feel free to reach out to me for any inquiries or to get in touch. You can contact me through the
-            information provided in my portfolio.</p>
-          <div class="contact_div">
-            <div *ngFor="let img of contactImages;let i=index">
-              <img src="{{img.image}}" class="contact_images img-fluid" [ngClass]="{'firstImage':i ===0 }">
-              <span class="contact_text">{{img.content}}</span>
-            </div>
+<div class="section6_bg" id="section6">
+  <div class="container-fluid extra_padding">
+    <div class="recent_card" style="padding-top: 20px;">
+      <p class="main_title_card">Get In Touch</p>
+    </div>
+    <div class="getintouch">
+      <div class="content-container">
+        <p>Please feel free to reach out to me. You can contact me through the
+          information provided in my portfolio.</p>
+        <div class="contact_div">
+          <div *ngFor="let img of contactImages;let i=index">
+            <img src="{{img.image}}" class="contact_images img-fluid" [ngClass]="{'firstImage':i ===0 }">
+            <span class="contact_text">{{img.content}}</span>
           </div>
-
         </div>
+
       </div>
-      <div class="col-md-6">
+      <div style="flex: 0.5;">
         <div class="title">Drop A Line</div>
         <div class="form-container">
           <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-            <div style="display: flex;flex-direction: row;gap: 10px;">
+            <div class="c_getintouch">
               <div class="form-group" style="flex:1">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" formControlName="name" placeholder="Name">
@@ -252,26 +235,26 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" formControlName="message" placeholder="Message"></textarea>
             </div>
-            <button *ngIf="profileForm.valid" [disabled]="profileForm.valid" type="submit">Submit</button>
+            <button *ngIf="profileForm.valid" type="submit">Submit</button>
             <button *ngIf="!profileForm.valid" class="button_disable" [disabled]="!profileForm.valid"
               type="submit">Submit</button>
           </form>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<footer class="footer">
-  <div class="footer-content">
-   
-    <div class="contact_div" style="flex-direction: row;">
-      <img class="img-fluid img_home  rounded-circle" src="assets/linkedin.png" alt="Image">
-      <img class="img-fluid img_home  rounded-circle" src="assets/github.png" alt="Image" style="background-color: white;">
-    </div>
-    <div>
-      <span>Resume</span>
-      <span style="margin-left: 10px;">Portfolio</span>
-    </div>
-    <div>&copy;2023 Manasa Chavva</div>
-  </div>
-</footer>
+    <footer class="footer">
+      <div class="footer-content">
+
+        <div class="contact_div" style="flex-direction: row;">
+          <img class="img-fluid img_home  rounded-circle" (click)="linkedinClick()" src="assets/linkedin.png"
+            alt="Image">
+          <img class="img-fluid img_home  rounded-circle" (click)="githubClick()" src="assets/github.png" alt="Image"
+            style="background-color: white;">
+        </div>
+        <div>
+          <span style="cursor: pointer;" (click)="openResume()">Resume</span>
+          <span style="margin-left: 10px;">Portfolio</span>
+        </div>
+        <div>&copy;2023 Manasa Chavva</div>
+      </div>
+    </footer>

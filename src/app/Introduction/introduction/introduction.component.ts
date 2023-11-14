@@ -5,6 +5,7 @@ import {
   UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-introduction',
@@ -21,7 +22,7 @@ export class IntroductionComponent implements OnInit {
   skillContent: any;
   projects: any;
   Experience: any;
-  constructor(private formbuilder: UntypedFormBuilder) {
+  constructor(private formbuilder: UntypedFormBuilder,private router:Router) {
     this.texts = [
       'FrontEnd Developer',
       'Designer',
@@ -47,22 +48,27 @@ export class IntroductionComponent implements OnInit {
     this.images = [
       'assets/html.png',
       'assets/css.png',
-      'assets/html.png',
-      'assets/css.png',
-      'assets/html.png',
-      'assets/css.png',
+      'assets/Angular.png',
+      'assets/js.png',
+      'assets/typescript.png',
+      'assets/python.png',
+      'assets/java.png',
+      'assets/github.png',
+      'assets/visualstudio.png',
+      'assets/postgres.png',
+
     ];
     this.contactImages = [
       {
-        image: 'assets/call.png',
+        image: 'assets/callphone.png',
         content: '+91 7285995018',
       },
       {
-        image: 'assets/email.png',
+        image: 'assets/Email1.png',
         content: 'chavvamanasa@gmail.com',
       },
       {
-        image: 'assets/location.png',
+        image: 'assets/location1.png',
         content: 'Hyderabad',
       },
     ];
@@ -96,46 +102,24 @@ export class IntroductionComponent implements OnInit {
         pathname: 'Todo Code Path',
         netlifylink: 'https://manasa-todoapp.netlify.app',
         githublink: 'https://github.com/manasachavva88/TODO-APP.git',
+        image: 'assets/todo.png',
       },
       {
-        name: 'TODO APP',
-        description:
-          'A user-friendly web application that allows users to manage their tasks efficiently.',
-        pathname: 'Todo Code Path',
-        netlifylink: '',
-        githublink: '',
+        name: 'Quiz APP',
+        description: `Interactive quiz application testing users' knowledge with multiple-choice questions and providing instant feedback.`,
+        pathname: 'Quiz App Code Path',
+        netlifylink: 'https://manasaquizapp.netlify.app/',
+        githublink: 'https://github.com/manasachavva88/Quiz-App.git',
+        image: 'assets/quiz.png',
       },
       {
-        name: 'TODO APP',
+        name: 'Tic-Tac-Toe Game',
         description:
-          'A user-friendly web application that allows users to manage their tasks efficiently.',
-        pathname: 'Todo Code Path',
-        netlifylink: '',
-        githublink: '',
-      },
-      {
-        name: 'TODO APP',
-        description:
-          'A user-friendly web application that allows users to manage their tasks efficiently.',
-        pathname: 'Todo Code Path',
-        netlifylink: '',
-        githublink: '',
-      },
-      {
-        name: 'TODO APP',
-        description:
-          'A user-friendly web application that allows users to manage their tasks efficiently.',
-        pathname: 'Todo Code Path',
-        netlifylink: '',
-        githublink: '',
-      },
-      {
-        name: 'TODO APP',
-        description:
-          'A user-friendly web application that allows users to manage their tasks efficiently.',
-        pathname: 'Todo Code Path',
-        netlifylink: '',
-        githublink: '',
+          'Play the classic Tic-Tac-Toe with a computer AI or challenge a friend in this fun and interactive game. ',
+        pathname: 'Tic-Tac-Toe Code Path',
+        netlifylink: 'https://manasa-tictactoe.netlify.app/',
+        githublink: 'https://github.com/manasachavva88/TicTacToe.git',
+        image: 'assets/tic-tac-toe.png',
       },
     ];
     this.Experience = [
@@ -170,8 +154,20 @@ export class IntroductionComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.profileForm.value);
+  //  const mailtoLink = `mailto:${this.profileForm.value}?subject=${encodeURIComponent(this.profileForm.value)}&body=${encodeURIComponent(this.profileForm.value)}`; 
+  //   window.location.href = mailtoLink;
   }
   get f() {
     return this.profileForm.controls;
+  }
+  linkedinClick(){
+    window.open('https://www.linkedin.com/in/chavva-manasa-88b16b137/', '_blank');
+  }
+  githubClick(){
+    window.open('https://github.com/manasachavva88', '_blank');
+  }
+  openResume(){
+    const resumeURL = 'assets/Resume.pdf'; 
+  window.open(resumeURL, '_blank');
   }
 }
