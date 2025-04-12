@@ -22,7 +22,7 @@ export class IntroductionComponent implements OnInit {
   skillContent: any;
   projects: any;
   Experience: any;
-  constructor(private formbuilder: UntypedFormBuilder,private router:Router) {
+  constructor(private formbuilder: UntypedFormBuilder, private router: Router) {
     this.texts = [
       'FrontEnd Developer',
       'Designer',
@@ -56,13 +56,12 @@ export class IntroductionComponent implements OnInit {
       'assets/github.png',
       'assets/visualstudio.png',
       'assets/postgres.png',
-
     ];
     this.contactImages = [
-      {
-        image: 'assets/callphone.png',
-        content: '+91 7285995018',
-      },
+      // {
+      //   image: 'assets/callphone.png',
+      //   content: '+91 728599XXXX',
+      // },
       {
         image: 'assets/Email1.png',
         content: 'chavvamanasa@gmail.com',
@@ -87,6 +86,11 @@ export class IntroductionComponent implements OnInit {
         skill: 'Angular FrameWork',
         content:
           'I possess a solid grasp of the Angular framework, equipped with a deep understanding of components, data binding, services, and directives. My hands-on experience includes architecting modular applications with responsive design. I excel in synchronizing data flow between components and templates, creating real-time user interactions. I"m eager to contribute this expertise to impactful projects.',
+      },
+      {
+        skill: 'Backend Development',
+        content:
+          'In addition to front-end development, I’ve contributed to back-end functionality using Java, Spring Data JPA, and MariaDB. I’ve implemented custom repository methods, optimized SQL queries, and worked with relational databases to manage and retrieve complex transactional data. Experienced in testing APIs using Postman, collaborating across teams to deliver seamless full-stack solutions that are reliable, secure, and scalable.',
       },
       // {
       //   skill: 'Front-End Proficiency',
@@ -140,7 +144,7 @@ export class IntroductionComponent implements OnInit {
         year: '2021-2023',
         companyname: 'Accenture',
         rolename: 'Custom Software Engineering Analyst',
-        timeline: '2021 December - Present',
+        timeline: '2021 December - 2024 July',
         subrolename: 'Senior FrontEnd Developer',
         roledesc: `Over the span of two years, I took on more complex projects, displaying an in-depth understanding of front-end technologies and design principles.
   In addition to HTML, CSS, and JavaScript, I also gained proficiency in Angular, RxJS for asynchronous interactions TypeScript, jQuery, Bootstrap, JSON, allowing me to build dynamic and highly interactive user interfaces. 
@@ -150,24 +154,38 @@ export class IntroductionComponent implements OnInit {
   Mentored junior developers, providing guidance on coding practices and fostering their professional growth.
   `,
       },
+      {
+        year: '2024-2025',
+        companyname: 'EPAM Systems',
+        rolename: 'Software Engineer A2',
+        timeline: '2024 July - Present',
+        subrolename: 'Senior FrontEnd Developer',
+        roledesc: `Working as a Frontend Developer on a large-scale banking and payment application, delivering secure and seamless user experiences for financial operations.
+        Took initiative to contribute beyond frontend by learning Java and Spring Data JPA; implemented custom repository methods to support complex backend data operations.Integrated MariaDB for backend storage, writing and optimizing SQL queries to manage transactional data effectively.
+        Developed responsive and scalable user interfaces using Angular 17, focusing on modularity, performance, and dynamic content rendering.
+        Followed Agile methodologies, contributing to sprint planning, daily stand-ups, code reviews, and continuous improvement processes.`,
+      },
     ];
   }
   onSubmit() {
     console.log(this.profileForm.value);
-  //  const mailtoLink = `mailto:${this.profileForm.value}?subject=${encodeURIComponent(this.profileForm.value)}&body=${encodeURIComponent(this.profileForm.value)}`; 
-  //   window.location.href = mailtoLink;
+    //  const mailtoLink = `mailto:${this.profileForm.value}?subject=${encodeURIComponent(this.profileForm.value)}&body=${encodeURIComponent(this.profileForm.value)}`;
+    //   window.location.href = mailtoLink;
   }
   get f() {
     return this.profileForm.controls;
   }
-  linkedinClick(){
-    window.open('https://www.linkedin.com/in/chavva-manasa-88b16b137/', '_blank');
+  linkedinClick() {
+    window.open(
+      'https://www.linkedin.com/in/chavva-manasa-88b16b137/',
+      '_blank'
+    );
   }
-  githubClick(){
+  githubClick() {
     window.open('https://github.com/manasachavva88', '_blank');
   }
-  openResume(){
-    const resumeURL = 'assets/Resume.pdf'; 
-  window.open(resumeURL, '_blank');
+  openResume() {
+    const resumeURL = 'assets/Resume.pdf';
+    window.open(resumeURL, '_blank');
   }
 }
